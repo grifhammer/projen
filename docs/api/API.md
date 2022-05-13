@@ -359,6 +359,7 @@ Name|Description
 [web.ReactTypeDefOptions](#projen-web-reacttypedefoptions)|*No description*
 [web.ReactTypeScriptProjectOptions](#projen-web-reacttypescriptprojectoptions)|*No description*
 [web.TailwindConfigOptions](#projen-web-tailwindconfigoptions)|*No description*
+[web.TailwindJSONConfig](#projen-web-tailwindjsonconfig)|*No description*
 
 
 **Interfaces**
@@ -10788,6 +10789,7 @@ new web.TailwindConfig(project: NodeProject, options?: TailwindConfigOptions)
 
 * **project** (<code>[javascript.NodeProject](#projen-javascript-nodeproject)</code>)  *No description*
 * **options** (<code>[web.TailwindConfigOptions](#projen-web-tailwindconfigoptions)</code>)  *No description*
+  * **config** (<code>[web.TailwindJSONConfig](#projen-web-tailwindjsonconfig)</code>)  *No description* __*Optional*__
   * **fileName** (<code>string</code>)  *No description* __*Default*__: "tailwind.config.json"
 
 
@@ -17244,7 +17246,30 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
+**config**?🔹 | <code>[web.TailwindJSONConfig](#projen-web-tailwindjsonconfig)</code> | __*Optional*__
 **fileName**?🔹 | <code>string</code> | __*Default*__: "tailwind.config.json"
+
+
+
+## struct TailwindJSONConfig 🔹 <a id="projen-web-tailwindjsonconfig"></a>
+
+
+
+
+
+
+Name | Type | Description 
+-----|------|-------------
+**content**?🔹 | <code>Array<string></code> | __*Optional*__
+**corePlugings**?🔹 | <code>Array<string> &#124; Map<string, boolean></code> | __*Optional*__
+**darkMode**?🔹 | <code>boolean</code> | __*Optional*__
+**important**?🔹 | <code>string &#124; boolean</code> | __*Optional*__
+**plugins**?🔹 | <code>Array<string></code> | __*Optional*__
+**prefix**?🔹 | <code>string</code> | __*Optional*__
+**purge**?🔹 | <code>Array<string></code> | __*Optional*__
+**separator**?🔹 | <code>string</code> | __*Optional*__
+**theme**?🔹 | <code>Map<string, any></code> | __*Optional*__
+**variants**?🔹 | <code>Map<string, string></code> | __*Optional*__
 
 
 

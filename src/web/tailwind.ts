@@ -2,20 +2,16 @@ import { NodeProject } from "../javascript";
 import { JsonFile } from "../json";
 
 export interface TailwindJSONConfig {
-  purge?: string[];
-  darkMode?: boolean;
-  theme?: {
-    extend: {}
-  },
-  variants?: {
-    extend: {}
-  },
-  plugins?: string[],
-  content?: string[],
-  prefix?: string,
-  important?: boolean | string,
-  separator?: string,
-  corePlugings?: string[] | {[key:string]: boolean},
+  readonly purge?: string[];
+  readonly darkMode?: boolean;
+  readonly theme?: { [key: string]: any };
+  readonly variants?: { [key: string]: string };
+  readonly plugins?: string[];
+  readonly content?: string[];
+  readonly prefix?: string;
+  readonly important?: boolean | string;
+  readonly separator?: string;
+  readonly corePlugings?: string[] | { [key: string]: boolean };
 }
 
 export interface TailwindConfigOptions {
@@ -40,19 +36,19 @@ export class TailwindConfig {
 
   constructor(project: NodeProject, options?: TailwindConfigOptions) {
     this.fileName = options?.fileName ?? "tailwind.config.json";
-    const config = options.config || {} as TailwindJSONConfig;
+    const config = options?.config || ({} as TailwindJSONConfig);
     this.file = new JsonFile(project, this.fileName, {
       obj: {
-        purge:  [],
+        purge: [],
         darkMode: false,
-        theme:  {
+        theme: {
           extend: {},
         },
         variants: {
           extend: {},
         },
         plugins: [],
-        ...config
+        ...config,
       },
     });
 
